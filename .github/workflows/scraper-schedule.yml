@@ -11,10 +11,6 @@ permissions:
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
-    
-    # [BARU] Memaksa runner menggunakan Node 24 untuk menghilangkan pesan warning
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
     steps:
     - name: Checkout repository
@@ -25,13 +21,18 @@ jobs:
       with:
         python-version: '3.11'
 
+    - name: Cek Lokasi File
+      run: |
+        echo "=== List file di folder utama ==="
+        ls -la
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests
 
     - name: Run Scraper Script
-      run: python scraper.py
+      run: python scrapper.py
 
     - name: Commit and Push changes
       run: |
