@@ -51,7 +51,7 @@ def scrape_latest_jobs():
         try:
             with open(csv_file, mode='r', encoding='utf-8') as f:
                 reader = csv.reader(f)
-                next(reader, None) # skip header
+                next(reader, None)
                 for row in reader:
                     if row:
                         existing_links.add(row[0])
