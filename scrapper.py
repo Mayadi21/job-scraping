@@ -43,7 +43,7 @@ def scrape_latest_jobs():
     print("=== MEMULAI SCRAPING POSTINGAN TERBARU ===")
     
     csv_file = 'postingan_terbaru.csv'
-    max_pages = 10
+    max_pages = 25
     file_exists = os.path.isfile(csv_file)
     
     existing_links = set()
